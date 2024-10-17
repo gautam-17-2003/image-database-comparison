@@ -29,7 +29,7 @@ This project demonstrates how to perform image similarity search using the Mobil
 1. **Clone the Repository**
 
    ```bash
-   git clone https://github.com/your-username/image-similarity-search.git
+   git clone https://github.com/gautam-17-2003/image-similarity-search.git
    cd image-similarity-search
    ```
 

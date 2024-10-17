@@ -38,7 +38,7 @@ This project demonstrates how to perform image similarity search using the Mobil
    pip install -r requirement.txt
    ```
 3. **Further Step to proceed**
-   - either you can upload the kaggle token from [Link text](https://www.kaggle.com/settings) or you can download the dataset manually from [Link text](https://www.kaggle.com/datasets/ifigotin/imagenetmini-1000)
+   - either you can upload the kaggle token from [here](https://www.kaggle.com/settings) or you can download the dataset manually from [here](https://www.kaggle.com/datasets/ifigotin/imagenetmini-1000)
    - run the `Imagemini_mobilenetv2.ipynb` file cell by cell
    - this will make the indexes and maps them with the images
    - after the mapping is done, run the `st_app.py` by running
@@ -58,4 +58,4 @@ This project demonstrates how to perform image similarity search using the Mobil
 - MobileNetV2 is a pre-trained model available through TensorFlow
 
 # Contact
-- for any queries feel free to ask [Link text](pubrejagautam101@gmail.com)
+- for any queries feel free to ask [pubrejagautam@gmail.com]

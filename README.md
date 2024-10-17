@@ -12,7 +12,7 @@ This project demonstrates how to perform image similarity search using the Mobil
 
 ## Prerequisites
 
-- Python 3.12 (or compatible versions)
+- Python 3.10 (or lower version)
 - The following Python packages:
   - `tensorflow`
   - `numpy`

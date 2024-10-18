@@ -4,6 +4,7 @@ import numpy as np
 from tensorflow.keras.applications import MobileNetV2
 from annoy import AnnoyIndex
 from PIL import Image
+from sklearn.metrics.pairwise import cosine_similarity
 
 # Load the saved models
 pca = joblib.load('pca_model.pkl') # loaded from saved files
@@ -40,6 +41,15 @@ if user_image_path is not None:
     nearest_indices = annoy_index.get_nns_by_vector(user_feature_reduced, num_neighbors, include_distances=False)
     similar_images = [image_files[idx] for idx in nearest_indices]
 
-    st.image(user_image_path,width=300)
-    # Display similar image
-    st.image([Image.open(path) for path in similar_images], width=150)
+    #comparison by confusion matrics
+    similarities = cosine_similarity([user_feature_reduced], [pca.transform([base_model.predict(np.expand_dims(preprocess_image(path), axis=0))[0]])[0] for path in similar_images])[0]
+
+    # Display the uploaded image
+    st.subheader("Uploaded Image")
+    st.image(user_image_path, width=300)
+
+    # Display similar images and their similarity scores
+    st.subheader("Top 5 Similar Images (evalution metrics: cosine similarity)")
+    for i, (path, similarity) in enumerate(zip(similar_images, similarities)):
+        st.write(f"Image {i+1} - Similarity: {similarity:.2f}")
+        st.image(Image.open(path), width=150)
